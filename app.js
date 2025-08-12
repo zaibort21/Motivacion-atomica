@@ -119,6 +119,16 @@ const PRODUCTS = [
     stock: 10,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
+  },
+  {
+    id: 'beisbolera',
+    title: 'Clasica',
+    price: 55000,
+    description: 'Perfectas para equipos y merchandising.',
+    images: ['modelo5.jpg'],
+    stock: 10,
+    colors: ['Marino','Negro','Gris'],
+    sizes: ['S','M','L']
   }
 ];
 
@@ -241,23 +251,65 @@ function updateCartUI(){
   }
 }
 
-// Cart open/close
+// Cart open/close y referencias
 const cartPanel = document.getElementById('carrito');
-document.getElementById('cart-btn').addEventListener('click', (e)=>{
-  e.preventDefault();
+const cartBtn = document.getElementById('cart-btn');
+const cartBtnMobile = document.getElementById('cart-btn-mobile');
+const closeCartBtn = document.getElementById('close-cart');
+
+// Función para mostrar el carrito y renderizar PayPal
+function abrirCarrito() {
   cartPanel.setAttribute('aria-hidden', 'false');
+  renderPayPalButton();
+}
+
+// Eventos para abrir el carrito
+if (cartBtn) cartBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  abrirCarrito();
 });
-document.getElementById('close-cart').addEventListener('click', ()=>{
-  cartPanel.setAttribute('aria-hidden','true');
+if (cartBtnMobile) cartBtnMobile.addEventListener('click', (e) => {
+  e.preventDefault();
+  abrirCarrito();
 });
 
-// Botón carrito móvil
-const cartBtnMobile = document.getElementById('cart-btn-mobile');
-if(cartBtnMobile){
-  cartBtnMobile.addEventListener('click', (e)=>{
-    e.preventDefault();
-    cartPanel.setAttribute('aria-hidden', 'false');
-  });
+// Evento para cerrar el carrito
+if (closeCartBtn) closeCartBtn.addEventListener('click', () => {
+  cartPanel.setAttribute('aria-hidden', 'true');
+});
+
+// Renderizar el botón de PayPal cada vez que se abre el carrito
+function renderPayPalButton() {
+  const paypalContainer = document.getElementById('paypal-button-container');
+  if (!paypalContainer) return;
+  paypalContainer.innerHTML = ""; // Limpia para evitar duplicados
+  if (window.paypal) {
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        const total = calcularTotalCarrito();
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: total.toString() // En COP, sin decimales
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Pago completado por ' + details.payer.name.given_name);
+          cart = [];
+          updateCartUI();
+          renderPayPalButton();
+        });
+      }
+    }).render('#paypal-button-container');
+  }
+}
+
+// Calcular el total real del carrito
+function calcularTotalCarrito() {
+  return cart.reduce((s, i) => s + i.price * i.qty, 0);
 }
 
 // WhatsApp checkout
@@ -306,88 +358,18 @@ document.getElementById('checkout-stripe').addEventListener('click', async ()=>{
   }
 });
 
-function renderPayPalButton() {
-  const paypalContainer = document.getElementById('paypal-button-container');
-  if (!paypalContainer) return;
-  paypalContainer.innerHTML = ""; // Limpia para evitar duplicados
-  if (window.paypal) {
-    paypal.Buttons({
-      createOrder: function(data, actions) {
-        const total = calcularTotalCarrito();
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: total.toString() // En COP, sin decimales
-            }
-          }]
-        });
-      },
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-          alert('Pago completado por ' + details.payer.name.given_name);
-          cart = [];
-          updateCartUI();
-          renderPayPalButton();
-        });
-      }
-    }).render('#paypal-button-container');
-  }
-}
-
-// Llama a renderPayPalButton cada vez que abras el carrito
-document.getElementById('cart-btn').addEventListener('click', (e)=>{
-  e.preventDefault();
-  cartPanel.setAttribute('aria-hidden', 'false');
-  renderPayPalButton();
-});
-if(cartBtnMobile){
-  cartBtnMobile.addEventListener('click', (e)=>{
-    e.preventDefault();
-    cartPanel.setAttribute('aria-hidden', 'false');
-    renderPayPalButton();
-  });
-}
-
-// CTA WhatsApp header/footer
-document.getElementById('cta-whatsapp').addEventListener('click', (e)=>{
-  e.preventDefault();
-  window.location.href = '#carrito';
-  cartPanel.setAttribute('aria-hidden','false');
-});
-document.getElementById('whatsapp-footer').addEventListener('click', (e)=>{
-  e.preventDefault();
-  // abrir chat vacío
-  window.open('https://wa.me/573115477984', '_blank'); // REEMPLAZA
-});
-
-// Carrusel de imágenes del catálogo
-const carrusel = document.getElementById('carrusel');
-if (carrusel) {
-  // Toma la primera imagen de cada producto
-  let images = PRODUCTS.map(p => p.images[0]);
-  // Duplica las imágenes para efecto infinito
-  images = images.concat(images);
-  carrusel.innerHTML = images.map(src => `<img src="${src}" alt="Gorra catálogo">`).join('');
-}
-
-// Ejemplo de función para calcular el total (ajusta según tu lógica)
-function calcularTotalCarrito() {
-  // Suma el total del carrito en COP
-  return cart.reduce((s, i) => s + i.price * i.qty, 0);
-}
-
-// init
-renderProducts();
-updateCartUI();
-document.getElementById('year').innerText = new Date().getFullYear();
-
+// Botón de pago directo en móvil
 const btnPagarDirecto = document.getElementById('pagar-directo-mobile');
 if(btnPagarDirecto){
   btnPagarDirecto.addEventListener('click', ()=>{
-    // Simula click en el botón de PayPal
     const paypalBtn = document.querySelector('#paypal-button-container button');
     if(paypalBtn) paypalBtn.click();
     else alert('El botón de PayPal no está disponible.');
   });
 }
+
+// Inicialización
+renderProducts();
+updateCartUI();
+document.getElementById('year').innerText = new Date().getFullYear();
 
