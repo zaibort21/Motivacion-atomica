@@ -186,6 +186,8 @@ function addToCart(item){
 
 function updateCartUI(){
   document.getElementById('cart-count').innerText = cart.reduce((s,i)=>s+i.qty,0);
+  const cartCountMobile = document.getElementById('cart-count-mobile');
+  if(cartCountMobile) cartCountMobile.innerText = cart.reduce((s,i)=>s+i.qty,0);
   // render items
   const itemsWrap = document.getElementById('cart-items');
   if(!itemsWrap) return;
@@ -248,6 +250,15 @@ document.getElementById('cart-btn').addEventListener('click', (e)=>{
 document.getElementById('close-cart').addEventListener('click', ()=>{
   cartPanel.setAttribute('aria-hidden','true');
 });
+
+// Botón carrito móvil
+const cartBtnMobile = document.getElementById('cart-btn-mobile');
+if(cartBtnMobile){
+  cartBtnMobile.addEventListener('click', (e)=>{
+    e.preventDefault();
+    cartPanel.setAttribute('aria-hidden', 'false');
+  });
+}
 
 // WhatsApp checkout
 document.getElementById('checkout-whatsapp').addEventListener('click', ()=>{
@@ -350,4 +361,14 @@ function calcularTotalCarrito() {
 renderProducts();
 updateCartUI();
 document.getElementById('year').innerText = new Date().getFullYear();
+
+const btnPagarDirecto = document.getElementById('pagar-directo-mobile');
+if(btnPagarDirecto){
+  btnPagarDirecto.addEventListener('click', ()=>{
+    // Simula click en el botón de PayPal
+    const paypalBtn = document.querySelector('#paypal-button-container button');
+    if(paypalBtn) paypalBtn.click();
+    else alert('El botón de PayPal no está disponible.');
+  });
+}
 

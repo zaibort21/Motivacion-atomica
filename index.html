@@ -95,6 +95,7 @@
           </div>
           <div id="paypal-button-container" style="margin-top:1rem;"></div>
         </div>
+        <button id="pagar-directo-mobile" class="btn primary" style="width:100%;margin:1rem 0;display:none;">Pagar ahora</button>
       </div>
     </aside>
 
@@ -177,6 +178,26 @@
   </main>
 
   <script src="app.js"></script>
+
+  <button id="cart-btn-mobile" style="
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    background: var(--dark);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    font-size: 1.7rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    display: none;
+  ">
+    🛒
+    <span id="cart-count-mobile" style="position:absolute;top:8px;right:10px;background:var(--gold);color:#fff;border-radius:50%;padding:2px 7px;font-size:.9rem"></span>
+  </button>
+
 </body>
 </html>
 
