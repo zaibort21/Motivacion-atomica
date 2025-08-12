@@ -5,7 +5,7 @@ const PRODUCTS = [
     title: 'Classic',
     price: 55000,
     description: 'Gorra clásica, versátil y elegante.',
-    images: ['img/modelo1.jpg'],
+    images: ['modelo1.jpg'],
     stock: 12,
     colors: ['Negro','Blanco','Beige'],
     sizes: ['S','M','L']
@@ -15,7 +15,7 @@ const PRODUCTS = [
     title: 'clasica',
     price: 65000,
     description: 'Gorra clásica, versátil y elegante.',
-    images: ['img/modelo2.jpg'],
+    images: ['modelo2.jpg'],
     stock: 12,
     colors: ['Azul Marino','Gris','Negro'],
     sizes: ['S','M','L']
@@ -25,7 +25,7 @@ const PRODUCTS = [
     title: 'clasica',
     price: 65000,
     description: 'Acabados premium, hilo dorado disponible.',
-    images: ['img/modelo3.jpg'],
+    images: ['modelo3.jpg'],
     stock: 12,
     colors: ['Negro','Dorado','Blanco'],
     sizes: ['S','M','L']
@@ -35,7 +35,7 @@ const PRODUCTS = [
     title: 'Clasica',
     price: 65000,
     description: 'Estilo retro con paleta de temporada.',
-    images: ['img/modelo4.jpg'],
+    images: ['modelo4.jpg'],
     stock: 12,
     colors: ['Azul Claro','Bordeaux','Blanco'],
     sizes: ['S','M','L']
@@ -45,7 +45,7 @@ const PRODUCTS = [
     title: 'Clasica',
     price: 65000,
     description: 'Perfectas para equipos y merchandising.',
-    images: ['img/modelo5.jpg'],
+    images: ['modelo5.jpg'],
     stock: 12,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
@@ -55,7 +55,7 @@ const PRODUCTS = [
     title: 'Clasica',
     price: 70000,
     description: 'Accesorios para tu estilo',
-    images: ['img/modelo5.jpg'],
+    images: ['modelo5.jpg'],
     stock: 12,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
@@ -65,7 +65,7 @@ const PRODUCTS = [
     title: 'Clasica',
     price: 60000,
     description: 'modifica tu gorra a tu estilo',
-    images: ['img/modelo5.jpg'],
+    images: ['modelo5.jpg'],
     stock: 12,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
@@ -75,7 +75,7 @@ const PRODUCTS = [
     title: 'Clasica',
     price: 65000,
     description: 'Perfectas para equipos y merchandising.',
-    images: ['img/modelo5.jpg'],
+    images: ['modelo5.jpg'],
     stock: 10,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
@@ -85,7 +85,7 @@ const PRODUCTS = [
     title: 'Clasica',
     price: 55000,
     description: 'Perfectas para equipos y merchandising.',
-    images: ['img/modelo5.jpg'],
+    images: ['modelo5.jpg'],
     stock: 10,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
@@ -95,7 +95,7 @@ const PRODUCTS = [
     title: 'Clasica',
     price: 55000,
     description: 'Perfectas para equipos y merchandising.',
-    images: ['img/modelo5.jpg'],
+    images: ['modelo5.jpg'],
     stock: 10,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
@@ -105,7 +105,7 @@ const PRODUCTS = [
     title: 'Clasica',
     price: 55000,
     description: 'Perfectas para equipos y merchandising.',
-    images: ['img/modelo5.jpg'],
+    images: ['modelo5.jpg'],
     stock: 10,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
