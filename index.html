@@ -24,6 +24,9 @@
 
   <!-- Stripe (solo si vas a usar Stripe Checkout) -->
   <script src="https://js.stripe.com/v3/"></script>
+
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AQKVlhiy8bnALsIHaFTUsRdgyakRkm8CEMghAZMsc_xSy04Yb3SEIH-XGtRLInbsnlHBc4S9SyRiKSI5&currency=COP"></script>
 </head>
 <body>
   <header class="site-header">
@@ -90,6 +93,7 @@
             <button id="checkout-whatsapp" class="btn primary">Pagar por WhatsApp</button>
             <button id="checkout-stripe" class="btn outline">Pagar con Tarjeta (Stripe)</button>
           </div>
+          <div id="paypal-button-container" style="margin-top:1rem;"></div>
         </div>
       </div>
     </aside>

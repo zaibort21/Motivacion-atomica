@@ -109,6 +109,16 @@ const PRODUCTS = [
     stock: 10,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
+  },
+  {
+    id: 'beisbolera',
+    title: 'Clasica',
+    price: 55000,
+    description: 'Perfectas para equipos y merchandising.',
+    images: ['modelo5.jpg'],
+    stock: 10,
+    colors: ['Marino','Negro','Gris'],
+    sizes: ['S','M','L']
   }
 ];
 
@@ -285,6 +295,29 @@ document.getElementById('checkout-stripe').addEventListener('click', async ()=>{
   }
 });
 
+// Renderizar el botón de PayPal
+if (window.paypal) {
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      // Aquí debes calcular el total del carrito
+      const total = calcularTotalCarrito(); // Implementa esta función según tu lógica
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: total.toFixed(2) // Monto total en USD
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Pago completado por ' + details.payer.name.given_name);
+        // Aquí puedes limpiar el carrito o mostrar un mensaje de éxito
+      });
+    }
+  }).render('#paypal-button-container');
+}
+
 // CTA WhatsApp header/footer
 document.getElementById('cta-whatsapp').addEventListener('click', (e)=>{
   e.preventDefault();
@@ -305,6 +338,12 @@ if (carrusel) {
   // Duplica las imágenes para efecto infinito
   images = images.concat(images);
   carrusel.innerHTML = images.map(src => `<img src="${src}" alt="Gorra catálogo">`).join('');
+}
+
+// Ejemplo de función para calcular el total (ajusta según tu lógica)
+function calcularTotalCarrito() {
+  // Suma el total del carrito en COP
+  return cart.reduce((s, i) => s + i.price * i.qty, 0);
 }
 
 // init
