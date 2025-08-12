@@ -306,27 +306,46 @@ document.getElementById('checkout-stripe').addEventListener('click', async ()=>{
   }
 });
 
-// Renderizar el botón de PayPal
-if (window.paypal) {
-  paypal.Buttons({
-    createOrder: function(data, actions) {
-      // Aquí debes calcular el total del carrito
-      const total = calcularTotalCarrito(); // Implementa esta función según tu lógica
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: total.toFixed(2) // Monto total en USD
-          }
-        }]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        alert('Pago completado por ' + details.payer.name.given_name);
-        // Aquí puedes limpiar el carrito o mostrar un mensaje de éxito
-      });
-    }
-  }).render('#paypal-button-container');
+function renderPayPalButton() {
+  const paypalContainer = document.getElementById('paypal-button-container');
+  if (!paypalContainer) return;
+  paypalContainer.innerHTML = ""; // Limpia para evitar duplicados
+  if (window.paypal) {
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        const total = calcularTotalCarrito();
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: total.toString() // En COP, sin decimales
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Pago completado por ' + details.payer.name.given_name);
+          cart = [];
+          updateCartUI();
+          renderPayPalButton();
+        });
+      }
+    }).render('#paypal-button-container');
+  }
+}
+
+// Llama a renderPayPalButton cada vez que abras el carrito
+document.getElementById('cart-btn').addEventListener('click', (e)=>{
+  e.preventDefault();
+  cartPanel.setAttribute('aria-hidden', 'false');
+  renderPayPalButton();
+});
+if(cartBtnMobile){
+  cartBtnMobile.addEventListener('click', (e)=>{
+    e.preventDefault();
+    cartPanel.setAttribute('aria-hidden', 'false');
+    renderPayPalButton();
+  });
 }
 
 // CTA WhatsApp header/footer
