@@ -129,6 +129,16 @@ const PRODUCTS = [
     stock: 10,
     colors: ['Marino','Negro','Gris'],
     sizes: ['S','M','L']
+  },
+  {
+    id: 'beisbolera',
+    title: 'Clasica',
+    price: 55000,
+    description: 'Perfectas para equipos y merchandising.',
+    images: ['modelo5.jpg'],
+    stock: 10,
+    colors: ['Marino','Negro','Gris'],
+    sizes: ['S','M','L']
   }
 ];
 
@@ -254,7 +264,6 @@ function updateCartUI(){
 // Cart open/close y referencias
 const cartPanel = document.getElementById('carrito');
 const cartBtn = document.getElementById('cart-btn');
-const cartBtnMobile = document.getElementById('cart-btn-mobile');
 const closeCartBtn = document.getElementById('close-cart');
 
 // Función para mostrar el carrito y renderizar PayPal
@@ -265,10 +274,6 @@ function abrirCarrito() {
 
 // Eventos para abrir el carrito
 if (cartBtn) cartBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  abrirCarrito();
-});
-if (cartBtnMobile) cartBtnMobile.addEventListener('click', (e) => {
   e.preventDefault();
   abrirCarrito();
 });
@@ -372,4 +377,28 @@ if(btnPagarDirecto){
 renderProducts();
 updateCartUI();
 document.getElementById('year').innerText = new Date().getFullYear();
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Botón carrito móvil
+  const cartBtnMobile = document.getElementById('cart-btn-mobile');
+  if (cartBtnMobile) cartBtnMobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    abrirCarrito();
+  });
+
+  // Botón WhatsApp
+  const btnWhatsapp = document.getElementById('checkout-whatsapp');
+  if (btnWhatsapp) btnWhatsapp.addEventListener('click', ()=>{
+    if(cart.length === 0) { alert('Tu carrito está vacío'); return; }
+    const phone = '573115477984'; // REEMPLAZA: tu numero en formato internacional sin +
+    let text = `Hola! quiero hacer un pedido:%0A`;
+    cart.forEach(item => {
+      text += `- ${item.title} | ${item.color} | ${item.size} x${item.qty} => ${formatCOP(item.price*item.qty)}%0A`;
+    });
+    const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+    text += `%0ASubtotal: ${formatCOP(subtotal)}%0AEnvío: (indicar)%0ATotal: ${formatCOP(subtotal)}%0A%0ANombre:%0ADirección:%0ANota:`; 
+    const url = `https://wa.me/${phone}?text=${text}`;
+    window.open(url, '_blank');
+  });
+});
 
