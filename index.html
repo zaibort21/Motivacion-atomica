@@ -3,20 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Gorras Bordadas & Beisboleras</title>
-  <meta name="description" content="Gorras bordadas premium, personalización rápida, ediciones limitadas. Compra por WhatsApp o tarjeta." />
+  <title>Gorras Bordadas Premium | Elysiam - Personalización y Envíos Colombia</title>
+  <meta name="description" content="Gorras bordadas premium con personalización rápida. Modelos únicos, calidad superior, envíos a toda Colombia. Compra por WhatsApp, PayPal o Nequi. ¡Ediciones limitadas disponibles!" />
+  <meta name="keywords" content="gorras bordadas, gorras personalizadas, bordado premium, gorras Colombia, merchandising, gorras empresariales, personalización rápida, ediciones limitadas" />
+  <meta name="author" content="Elysiam" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Google Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
 
   <!-- Open Graph / Social -->
-  <meta property="og:title" content="Gorras Bordadas"/>
-  <meta property="og:description" content="Gorras bordadas premium. Personaliza la tuya. Envíos a toda Colombia."/>
-  <meta property="og:image" content="images/og-image.jpg"/>
+  <meta property="og:title" content="Gorras Bordadas Premium | Elysiam"/>
+  <meta property="og:description" content="Gorras bordadas premium con personalización rápida. Modelos únicos, calidad superior, envíos a toda Colombia."/>
+  <meta property="og:image" content="https://tudominio.com/modelo1.jpg"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://tudominio.com"/>
+  <meta property="og:site_name" content="Elysiam" />
 
   <!-- Twitter / Facebook -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Gorras Bordadas"/>
-  <meta name="twitter:description" content="Gorras bordadas premium. Personaliza la tuya. Envíos a toda Colombia."/>
+  <meta name="twitter:title" content="Gorras Bordadas Premium | Elysiam"/>
+  <meta name="twitter:description" content="Gorras bordadas premium con personalización rápida. Modelos únicos, calidad superior, envíos a toda Colombia."/>
+  <meta name="twitter:image" content="https://tudominio.com/modelo1.jpg"/>
+
+  <!-- Structured Data for Products -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Elysiam",
+    "description": "Tienda especializada en gorras bordadas premium y personalizadas",
+    "url": "https://tudominio.com",
+    "telephone": "+573115477984",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CO"
+    },
+    "paymentAccepted": ["PayPal", "Nequi", "Cash"],
+    "currenciesAccepted": "COP"
+  }
+  </script>
 
   <link rel="stylesheet" href="styles.css"/>
   <!-- Google fonts -->
@@ -40,6 +73,7 @@
         <a href="#catalogo">Catálogo</a>
         <a href="#como-se-hace">Cómo se hace</a>
         <a href="#testimonios">Testimonios</a>
+        <a href="#donaciones">Donaciones</a>
         <a href="#faq">FAQ</a>
         <a href="#carrito" id="cart-btn">Carrito (<span id="cart-count">0</span>)</a>
       </nav>
@@ -146,7 +180,7 @@
       </details>
       <details>
         <summary>¿Qué métodos de pago aceptan?</summary>
-        <p>WhatsApp (transferencia / pago en efectivo a entrega) y paypal.</p>
+        <p>Aceptamos múltiples formas de pago: WhatsApp (transferencia / pago en efectivo a entrega), PayPal, Stripe (tarjetas de crédito y débito) y Nequi (3115477984).</p>
       </details>
     </section>
 
@@ -154,6 +188,40 @@
     <section id="envios" class="shipping container">
       <h3>Política de envíos</h3>
       <p>Envíos a todo Colombia vía mensajería. Tiempo estimado: 2–5 días. Costo según destino. Cambios y devoluciones: hasta 7 días si el producto presenta defectos de fabricación.</p>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donaciones" class="donations container">
+      <h3>Apoya nuestro proyecto</h3>
+      <p>¿Te gusta lo que hacemos? Ayúdanos a seguir creciendo y ofreciendo productos de calidad. Cada donación cuenta.</p>
+      
+      <div class="donation-methods">
+        <div class="donation-card">
+          <h4>💳 PayPal</h4>
+          <p>Donación segura con tarjeta o cuenta PayPal</p>
+          <div id="paypal-donation-container" style="margin-top: 1rem;"></div>
+        </div>
+        
+        <div class="donation-card">
+          <h4>📱 Nequi</h4>
+          <p>Transferencia rápida desde tu app Nequi</p>
+          <div class="nequi-info">
+            <strong>Número: 3115477984</strong>
+            <p>Nombre: Elysiam</p>
+            <button class="btn primary" id="copy-nequi">Copiar número</button>
+          </div>
+        </div>
+        
+        <div class="donation-card">
+          <h4>💰 Montos sugeridos</h4>
+          <div class="donation-amounts">
+            <button class="btn outline donation-amount" data-amount="5000">$5.000</button>
+            <button class="btn outline donation-amount" data-amount="10000">$10.000</button>
+            <button class="btn outline donation-amount" data-amount="20000">$20.000</button>
+            <button class="btn outline donation-amount" data-amount="50000">$50.000</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->

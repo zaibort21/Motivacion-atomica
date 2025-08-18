@@ -1,144 +1,70 @@
-// Datos de productos (5 modelos, stock 12 c/u)
+// Datos de productos - Catálogo limpio y organizado
 const PRODUCTS = [
   {
-    id: 'beisbolera',
-    title: 'Classic',
+    id: 'gorra-clasica-beisbolera',
+    title: 'Gorra Clásica Beisbolera',
     price: 55000,
-    description: 'Gorra clásica, versátil y elegante.',
+    description: 'Estilo tradicional americano. Perfecta para uso diario y deportivo.',
     images: ['modelo1.jpg'],
     stock: 12,
     colors: ['Negro','Blanco','Beige'],
-    sizes: ['S','M','L']
+    sizes: ['S','M','L'],
+    category: 'beisbolera'
   },
   {
-    id: 'Gorra plana',
-    title: 'clasica',
+    id: 'gorra-plana-urbana',
+    title: 'Gorra Plana Urbana',
     price: 65000,
-    description: 'Gorra clásica, versátil y elegante.',
+    description: 'Estilo urbano moderno con visera plana. Ideal para el street style.',
     images: ['modelo2.jpg'],
     stock: 12,
     colors: ['Azul Marino','Gris','Negro'],
-    sizes: ['S','M','L']
+    sizes: ['S','M','L'],
+    category: 'plana'
   },
   {
-    id: 'plana',
-    title: 'clasica',
+    id: 'gorra-premium-dorada',
+    title: 'Gorra Premium con Detalles Dorados',
     price: 65000,
-    description: 'Acabados premium, hilo dorado disponible.',
+    description: 'Acabados premium con hilo dorado disponible. Elegancia y distinción.',
     images: ['modelo3.jpg'],
     stock: 12,
     colors: ['Negro','Dorado','Blanco'],
-    sizes: ['S','M','L']
+    sizes: ['S','M','L'],
+    category: 'premium'
   },
   {
-    id: 'Plana',
-    title: 'Clasica',
+    id: 'gorra-retro-vintage',
+    title: 'Gorra Retro Vintage',
     price: 65000,
-    description: 'Estilo retro con paleta de temporada.',
+    description: 'Estilo retro con paleta de temporada. Diseño atemporal.',
     images: ['modelo4.jpg'],
     stock: 12,
     colors: ['Azul Claro','Bordeaux','Blanco'],
-    sizes: ['S','M','L']
+    sizes: ['S','M','L'],
+    category: 'retro'
   },
   {
-    id: 'plana',
-    title: 'Clasica',
+    id: 'gorra-corporativa',
+    title: 'Gorra Corporativa',
     price: 65000,
-    description: 'Perfectas para equipos y merchandising.',
+    description: 'Perfecta para equipos, empresas y merchandising corporativo.',
     images: ['modelo5.jpg'],
     stock: 12,
     colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
+    sizes: ['S','M','L'],
+    category: 'corporativa'
   },
   {
-    id: 'reloj',
-    title: 'Clasica',
-    price: 70000,
-    description: 'Accesorios para tu estilo',
-    images: ['modelo5.jpg'],
-    stock: 12,
-    colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
-  },
-  {
-    id: 'personalizada',
-    title: 'Clasica',
+    id: 'gorra-personalizada',
+    title: 'Gorra Personalizada',
     price: 60000,
-    description: 'modifica tu gorra a tu estilo',
-    images: ['modelo5.jpg'],
-    stock: 12,
-    colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
-  },
-  {
-    id: 'plana niños',
-    title: 'Clasica',
-    price: 65000,
-    description: 'Perfectas para equipos y merchandising.',
-    images: ['modelo5.jpg'],
-    stock: 10,
-    colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
-  },
-  {
-    id: 'beisbolera',
-    title: 'Clasica',
-    price: 55000,
-    description: 'Perfectas para equipos y merchandising.',
-    images: ['modelo5.jpg'],
-    stock: 10,
-    colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
-  },
-  {
-    id: 'beisbolera',
-    title: 'Clasica',
-    price: 55000,
-    description: 'Perfectas para equipos y merchandising.',
-    images: ['modelo5.jpg'],
-    stock: 10,
-    colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
-  },
-  {
-    id: 'beisbolera',
-    title: 'Clasica',
-    price: 55000,
-    description: 'Perfectas para equipos y merchandising.',
-    images: ['modelo5.jpg'],
-    stock: 10,
-    colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
-  },
-  {
-    id: 'beisbolera',
-    title: 'Clasica',
-    price: 55000,
-    description: 'Perfectas para equipos y merchandising.',
-    images: ['modelo5.jpg'],
-    stock: 10,
-    colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
-  },
-  {
-    id: 'beisbolera',
-    title: 'Clasica',
-    price: 55000,
-    description: 'Perfectas para equipos y merchandising.',
-    images: ['modelo5.jpg'],
-    stock: 10,
-    colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
-  },
-  {
-    id: 'beisbolera',
-    title: 'Clasica',
-    price: 55000,
-    description: 'Perfectas para equipos y merchandising.',
-    images: ['modelo5.jpg'],
-    stock: 10,
-    colors: ['Marino','Negro','Gris'],
-    sizes: ['S','M','L']
+    description: 'Diseña tu gorra única. Incluye bordado personalizado.',
+    images: ['modelo2.jpg'],
+    stock: 15,
+    colors: ['Negro','Blanco','Marino','Gris'],
+    sizes: ['S','M','L'],
+    category: 'personalizada'
   }
 ];
 
@@ -189,6 +115,14 @@ function renderProducts(){
   });
 }
 
+// Función para tracking de eventos (Google Analytics/Ads)
+function trackEvent(eventName, parameters = {}) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', eventName, parameters);
+  }
+  console.log('Event tracked:', eventName, parameters);
+}
+
 function addToCart(item){
   // valid stock
   const prod = PRODUCTS.find(p=>p.id===item.id);
@@ -201,6 +135,20 @@ function addToCart(item){
   // merge same variant
   const existing = cart.find(c=>c.id===item.id && c.color===item.color && c.size===item.size);
   if(existing){ existing.qty += item.qty; } else { cart.push(item); }
+  
+  // Track add to cart event
+  trackEvent('add_to_cart', {
+    currency: 'COP',
+    value: item.price * item.qty,
+    items: [{
+      item_id: item.id,
+      item_name: item.title,
+      item_category: item.category || 'gorras',
+      quantity: item.qty,
+      price: item.price
+    }]
+  });
+  
   updateCartUI();
 }
 
@@ -283,11 +231,28 @@ if (closeCartBtn) closeCartBtn.addEventListener('click', () => {
   cartPanel.setAttribute('aria-hidden', 'true');
 });
 
+// Función para mostrar loading en botones
+function setButtonLoading(buttonId, isLoading, originalText = 'Pagar') {
+  const button = document.getElementById(buttonId);
+  if (!button) return;
+  
+  if (isLoading) {
+    button.disabled = true;
+    button.textContent = 'Procesando...';
+    button.style.opacity = '0.7';
+  } else {
+    button.disabled = false;
+    button.textContent = originalText;
+    button.style.opacity = '1';
+  }
+}
+
 // Renderizar el botón de PayPal cada vez que se abre el carrito
 function renderPayPalButton() {
   const paypalContainer = document.getElementById('paypal-button-container');
   if (!paypalContainer) return;
   paypalContainer.innerHTML = ""; // Limpia para evitar duplicados
+  
   if (window.paypal) {
     paypal.Buttons({
       createOrder: function(data, actions) {
@@ -302,13 +267,33 @@ function renderPayPalButton() {
       },
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
+          // Track purchase event
+          trackEvent('purchase', {
+            transaction_id: details.id,
+            currency: 'COP',
+            value: calcularTotalCarrito(),
+            items: cart.map(item => ({
+              item_id: item.id,
+              item_name: item.title,
+              item_category: item.category || 'gorras',
+              quantity: item.qty,
+              price: item.price
+            }))
+          });
+          
           alert('Pago completado por ' + details.payer.name.given_name);
           cart = [];
           updateCartUI();
           renderPayPalButton();
         });
+      },
+      onError: function(err) {
+        console.error('Error en PayPal:', err);
+        alert('Error al procesar el pago. Por favor intenta nuevamente.');
       }
     }).render('#paypal-button-container');
+  } else {
+    paypalContainer.innerHTML = '<p style="color: #666;">PayPal no disponible. Intenta con WhatsApp.</p>';
   }
 }
 
@@ -320,6 +305,20 @@ function calcularTotalCarrito() {
 // WhatsApp checkout
 document.getElementById('checkout-whatsapp').addEventListener('click', ()=>{
   if(cart.length === 0) { alert('Tu carrito está vacío'); return; }
+  
+  // Track begin checkout event
+  trackEvent('begin_checkout', {
+    currency: 'COP',
+    value: cart.reduce((s,i)=>s+i.price*i.qty,0),
+    items: cart.map(item => ({
+      item_id: item.id,
+      item_name: item.title,
+      item_category: item.category || 'gorras',
+      quantity: item.qty,
+      price: item.price
+    }))
+  });
+  
   const phone = '573115477984'; // REEMPLAZA: tu numero en formato internacional sin +
   let text = `Hola! quiero hacer un pedido:%0A`;
   cart.forEach(item => {
@@ -334,6 +333,16 @@ document.getElementById('checkout-whatsapp').addEventListener('click', ()=>{
 // Stripe checkout (cliente -> requiere endpoint en servidor)
 document.getElementById('checkout-stripe').addEventListener('click', async ()=>{
   if(cart.length === 0) { alert('Tu carrito está vacío'); return; }
+  
+  setButtonLoading('checkout-stripe', true, 'Pagar con Tarjeta (Stripe)');
+  
+  // Track begin checkout event
+  trackEvent('begin_checkout', {
+    currency: 'COP',
+    value: cart.reduce((s,i)=>s+i.price*i.qty,0),
+    payment_type: 'stripe'
+  });
+  
   // Prepara items para enviar al servidor
   const line_items = cart.map(it => ({
     price_data: {
@@ -343,6 +352,7 @@ document.getElementById('checkout-stripe').addEventListener('click', async ()=>{
     },
     quantity: it.qty
   }));
+  
   // Mandar al servidor para crear session (endpoint ejemplo: /create-checkout-session)
   try {
     const res = await fetch('/create-checkout-session', {
@@ -350,16 +360,23 @@ document.getElementById('checkout-stripe').addEventListener('click', async ()=>{
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ line_items })
     });
+    
+    if (!res.ok) {
+      throw new Error('Error del servidor');
+    }
+    
     const data = await res.json();
     if(data.sessionId){
       const stripe = Stripe('pk_test_REPLACE'); // REEMPLAZA con tu public key
-      stripe.redirectToCheckout({ sessionId: data.sessionId });
+      await stripe.redirectToCheckout({ sessionId: data.sessionId });
     } else {
-      alert('Error al crear sesión de pago');
+      throw new Error('No se pudo crear la sesión de pago');
     }
   } catch(err){
-    console.error(err);
-    alert('Error al contactar el servidor de pagos');
+    console.error('Error en Stripe checkout:', err);
+    alert('Error al contactar el servidor de pagos. Por favor intenta con WhatsApp o PayPal.');
+  } finally {
+    setButtonLoading('checkout-stripe', false, 'Pagar con Tarjeta (Stripe)');
   }
 });
 
@@ -373,11 +390,131 @@ if(btnPagarDirecto){
   });
 }
 
+// Función para renderizar el botón de donación PayPal
+function renderPayPalDonationButton() {
+  const paypalDonationContainer = document.getElementById('paypal-donation-container');
+  if (!paypalDonationContainer || !window.paypal) return;
+  
+  paypalDonationContainer.innerHTML = "";
+  
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '10000' // Monto predeterminado de donación: $10.000 COP
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('¡Gracias por tu donación! Donante: ' + details.payer.name.given_name);
+      });
+    }
+  }).render('#paypal-donation-container');
+}
+
+// Funcionalidad para copiar número de Nequi
+function setupNequiCopy() {
+  const copyBtn = document.getElementById('copy-nequi');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('3115477984');
+        copyBtn.textContent = '¡Copiado!';
+        copyBtn.style.background = '#4CAF50';
+        setTimeout(() => {
+          copyBtn.textContent = 'Copiar número';
+          copyBtn.style.background = 'var(--gold)';
+        }, 2000);
+      } catch (err) {
+        // Fallback para navegadores que no soportan clipboard API
+        const textArea = document.createElement('textarea');
+        textArea.value = '3115477984';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        copyBtn.textContent = '¡Copiado!';
+        setTimeout(() => {
+          copyBtn.textContent = 'Copiar número';
+        }, 2000);
+      }
+    });
+  }
+}
+
+// Funcionalidad para montos de donación sugeridos
+function setupDonationAmounts() {
+  document.querySelectorAll('.donation-amount').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const amount = e.target.dataset.amount;
+      const formattedAmount = formatCOP(parseInt(amount));
+      
+      // Actualizar el monto en PayPal si está disponible
+      if (window.paypal) {
+        // Re-renderizar el botón de PayPal con el nuevo monto
+        const paypalContainer = document.getElementById('paypal-donation-container');
+        if (paypalContainer) {
+          paypalContainer.innerHTML = "";
+          paypal.Buttons({
+            createOrder: function(data, actions) {
+              return actions.order.create({
+                purchase_units: [{
+                  amount: {
+                    value: amount
+                  }
+                }]
+              });
+            },
+            onApprove: function(data, actions) {
+              return actions.order.capture().then(function(details) {
+                alert(`¡Gracias por tu donación de ${formattedAmount}! Donante: ${details.payer.name.given_name}`);
+              });
+            }
+          }).render('#paypal-donation-container');
+        }
+      }
+      
+      // Destacar el botón seleccionado
+      document.querySelectorAll('.donation-amount').forEach(b => {
+        b.style.background = 'rgba(255, 255, 255, 0.2)';
+        b.style.transform = 'none';
+      });
+      btn.style.background = 'rgba(255, 255, 255, 0.4)';
+      btn.style.transform = 'scale(1.05)';
+    });
+  });
+}
+
+// Función para renderizar el carrusel
+function renderCarousel() {
+  const carrusel = document.getElementById('carrusel');
+  if (!carrusel) return;
+  
+  // Crear array de imágenes duplicado para efecto infinito
+  const images = ['modelo1.jpg', 'modelo2.jpg', 'modelo3.jpg', 'modelo4.jpg', 'modelo5.jpg'];
+  const duplicatedImages = [...images, ...images]; // Duplicar para scroll infinito
+  
+  carrusel.innerHTML = '';
+  duplicatedImages.forEach(img => {
+    const imgElement = document.createElement('img');
+    imgElement.src = img;
+    imgElement.alt = 'Gorra bordada';
+    imgElement.loading = 'lazy';
+    carrusel.appendChild(imgElement);
+  });
+}
+
 // Inicialización
 renderProducts();
+renderCarousel();
 updateCartUI();
 document.getElementById('year').innerText = new Date().getFullYear();
 
+// Inicializar funcionalidades de donación cuando se carga la página
 document.addEventListener('DOMContentLoaded', function() {
   // Botón carrito móvil
   const cartBtnMobile = document.getElementById('cart-btn-mobile');
@@ -385,6 +522,47 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     abrirCarrito();
   });
+
+  // Configurar botón WhatsApp del hero
+  const ctaWhatsapp = document.getElementById('cta-whatsapp');
+  if (ctaWhatsapp) {
+    ctaWhatsapp.addEventListener('click', (e) => {
+      e.preventDefault();
+      const phone = '573115477984';
+      const text = 'Hola! Me interesa conocer más sobre sus gorras bordadas. ¿Podrían brindarme más información?';
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+      
+      // Track event
+      trackEvent('contact_whatsapp', {
+        method: 'hero_button'
+      });
+    });
+  }
+
+  // Configurar footer WhatsApp
+  const footerWhatsapp = document.getElementById('whatsapp-footer');
+  if (footerWhatsapp) {
+    footerWhatsapp.addEventListener('click', (e) => {
+      e.preventDefault();
+      const phone = '573115477984';
+      const text = 'Hola! Me gustaría contactarlos desde su sitio web.';
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+      
+      // Track event
+      trackEvent('contact_whatsapp', {
+        method: 'footer_button'
+      });
+    });
+  }
+
+  // Configurar donaciones
+  setTimeout(() => {
+    renderPayPalDonationButton();
+    setupNequiCopy();
+    setupDonationAmounts();
+  }, 1000); // Esperar a que PayPal se cargue
 
   // Botón WhatsApp
   const btnWhatsapp = document.getElementById('checkout-whatsapp');
