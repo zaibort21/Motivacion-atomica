@@ -96,6 +96,80 @@ footer.site-footer{background:var(--white);padding:1.2rem 0;border-top:1px solid
   100% { transform: translateX(-50%); }
 }
 
+/* Donations Section */
+.donations {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.donations h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.donation-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.donation-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.donation-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.nequi-info {
+  margin-top: 1rem;
+}
+
+.nequi-info strong {
+  font-size: 1.2rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.donation-amounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.donation-amount {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.donation-amount:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+#copy-nequi {
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  margin-top: 0.5rem;
+}
+
 @media (max-width:900px){
   .hero-inner{flex-direction:column}
   .hero-media img{width:100%}
@@ -153,6 +227,29 @@ footer.site-footer{background:var(--white);padding:1.2rem 0;border-top:1px solid
     flex-direction: column;
     gap: 0.5rem;
     align-items: flex-start;
+  }
+  
+  /* Responsive donations */
+  .donations {
+    padding: 1.5rem 1rem;
+    margin: 1rem 0.5rem;
+  }
+  
+  .donation-methods {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .donation-card {
+    padding: 1rem;
+  }
+  
+  .donation-amounts {
+    flex-direction: column;
+  }
+  
+  .donation-amount {
+    width: 100%;
   }
 }
 
