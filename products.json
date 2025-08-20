@@ -1,0 +1,222 @@
+[
+  {
+    "id": "wireless-earbuds-pro",
+    "title": "Wireless Earbuds Pro Max",
+    "price": 149.99,
+    "originalPrice": 299.99,
+    "description": "Premium wireless earbuds with active noise cancellation and 30-hour battery life. Crystal clear sound quality.",
+    "images": [
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500",
+      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500"
+    ],
+    "category": "Electronics",
+    "subcategory": "Audio",
+    "features": ["Active Noise Cancellation", "30H Battery", "IPX7 Waterproof", "Fast Charging"],
+    "ratings": 4.8,
+    "reviews": 2543,
+    "inStock": true,
+    "trending": true,
+    "supplier": "AliExpress",
+    "supplierPrice": 25.00,
+    "shippingTime": "7-15 days",
+    "tags": ["premium", "wireless", "audio", "tech"]
+  },
+  {
+    "id": "smartwatch-fitness-tracker",
+    "title": "SmartWatch Fitness Tracker Elite",
+    "price": 89.99,
+    "originalPrice": 199.99,
+    "description": "Advanced fitness tracker with heart rate monitor, GPS, and 14-day battery life. Compatible with iOS and Android.",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+      "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500"
+    ],
+    "category": "Electronics",
+    "subcategory": "Wearables",
+    "features": ["Heart Rate Monitor", "GPS Tracking", "14-day Battery", "50+ Sport Modes"],
+    "ratings": 4.6,
+    "reviews": 1876,
+    "inStock": true,
+    "trending": true,
+    "supplier": "AliExpress",
+    "supplierPrice": 18.00,
+    "shippingTime": "7-15 days",
+    "tags": ["fitness", "health", "smartwatch", "tech"]
+  },
+  {
+    "id": "portable-phone-charger",
+    "title": "Portable Wireless Charger 20000mAh",
+    "price": 39.99,
+    "originalPrice": 79.99,
+    "description": "High-capacity power bank with wireless charging capability. Charge 3 devices simultaneously.",
+    "images": [
+      "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500",
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500"
+    ],
+    "category": "Electronics",
+    "subcategory": "Chargers",
+    "features": ["20000mAh Capacity", "Wireless Charging", "3 Device Charging", "LED Display"],
+    "ratings": 4.7,
+    "reviews": 3421,
+    "inStock": true,
+    "trending": true,
+    "supplier": "AliExpress",
+    "supplierPrice": 8.50,
+    "shippingTime": "5-12 days",
+    "tags": ["portable", "charger", "wireless", "tech"]
+  },
+  {
+    "id": "led-strip-lights-smart",
+    "title": "Smart LED Strip Lights 16ft RGB",
+    "price": 29.99,
+    "originalPrice": 59.99,
+    "description": "WiFi-enabled RGB LED strips with voice control and music sync. Perfect for home decoration.",
+    "images": [
+      "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=500",
+      "https://images.unsplash.com/photo-1520637836862-4d197d17c8a4?w=500"
+    ],
+    "category": "Home & Garden",
+    "subcategory": "Lighting",
+    "features": ["Voice Control", "Music Sync", "16M Colors", "App Control"],
+    "ratings": 4.5,
+    "reviews": 2187,
+    "inStock": true,
+    "trending": true,
+    "supplier": "AliExpress",
+    "supplierPrice": 6.00,
+    "shippingTime": "7-14 days",
+    "tags": ["smart home", "lighting", "rgb", "decoration"]
+  },
+  {
+    "id": "bluetooth-speaker-waterproof",
+    "title": "Bluetooth Speaker Waterproof HD Sound",
+    "price": 49.99,
+    "originalPrice": 99.99,
+    "description": "Portable waterproof speaker with 360° surround sound and 24-hour battery life.",
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",
+      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500"
+    ],
+    "category": "Electronics",
+    "subcategory": "Audio",
+    "features": ["IPX7 Waterproof", "360° Sound", "24H Battery", "Bluetooth 5.0"],
+    "ratings": 4.6,
+    "reviews": 1654,
+    "inStock": true,
+    "trending": false,
+    "supplier": "AliExpress",
+    "supplierPrice": 12.00,
+    "shippingTime": "7-15 days",
+    "tags": ["portable", "waterproof", "audio", "outdoor"]
+  },
+  {
+    "id": "phone-camera-lens-kit",
+    "title": "Phone Camera Lens Kit Professional",
+    "price": 34.99,
+    "originalPrice": 69.99,
+    "description": "Professional mobile photography lens kit with macro, wide-angle, and telephoto lenses.",
+    "images": [
+      "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=500",
+      "https://images.unsplash.com/photo-1521335266720-9f8b9f9fe74a?w=500"
+    ],
+    "category": "Electronics",
+    "subcategory": "Photography",
+    "features": ["4-in-1 Lens Kit", "Universal Clip", "HD Glass", "Portable Case"],
+    "ratings": 4.4,
+    "reviews": 987,
+    "inStock": true,
+    "trending": true,
+    "supplier": "AliExpress",
+    "supplierPrice": 7.50,
+    "shippingTime": "8-16 days",
+    "tags": ["photography", "mobile", "lens", "professional"]
+  },
+  {
+    "id": "car-phone-mount-wireless",
+    "title": "Wireless Car Phone Mount Charger",
+    "price": 44.99,
+    "originalPrice": 89.99,
+    "description": "Automatic clamping car mount with wireless charging and 360° rotation.",
+    "images": [
+      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500"
+    ],
+    "category": "Electronics",
+    "subcategory": "Car Accessories",
+    "features": ["Wireless Charging", "Auto Clamp", "360° Rotation", "One-Hand Operation"],
+    "ratings": 4.7,
+    "reviews": 2145,
+    "inStock": true,
+    "trending": true,
+    "supplier": "AliExpress",
+    "supplierPrice": 9.00,
+    "shippingTime": "6-14 days",
+    "tags": ["car", "wireless", "mount", "charging"]
+  },
+  {
+    "id": "gaming-mechanical-keyboard",
+    "title": "Gaming Mechanical Keyboard RGB",
+    "price": 79.99,
+    "originalPrice": 159.99,
+    "description": "Professional gaming keyboard with mechanical switches and customizable RGB lighting.",
+    "images": [
+      "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=500",
+      "https://images.unsplash.com/photo-1595044426077-d36d9236d54a?w=500"
+    ],
+    "category": "Electronics",
+    "subcategory": "Gaming",
+    "features": ["Mechanical Switches", "RGB Backlight", "Anti-Ghosting", "Programmable Keys"],
+    "ratings": 4.8,
+    "reviews": 3567,
+    "inStock": true,
+    "trending": true,
+    "supplier": "AliExpress",
+    "supplierPrice": 16.00,
+    "shippingTime": "8-16 days",
+    "tags": ["gaming", "keyboard", "mechanical", "rgb"]
+  },
+  {
+    "id": "wireless-gaming-mouse",
+    "title": "Wireless Gaming Mouse High Precision",
+    "price": 59.99,
+    "originalPrice": 119.99,
+    "description": "High-precision wireless gaming mouse with 16000 DPI and programmable buttons.",
+    "images": [
+      "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500",
+      "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500"
+    ],
+    "category": "Electronics",
+    "subcategory": "Gaming",
+    "features": ["16000 DPI", "Wireless 2.4GHz", "8 Programmable Buttons", "RGB Lighting"],
+    "ratings": 4.6,
+    "reviews": 1432,
+    "inStock": true,
+    "trending": false,
+    "supplier": "AliExpress",
+    "supplierPrice": 12.50,
+    "shippingTime": "7-15 days",
+    "tags": ["gaming", "mouse", "wireless", "precision"]
+  },
+  {
+    "id": "laptop-cooling-pad",
+    "title": "Laptop Cooling Pad with LED Fans",
+    "price": 39.99,
+    "originalPrice": 79.99,
+    "description": "Ultra-quiet laptop cooling pad with 6 LED fans and adjustable height stand.",
+    "images": [
+      "https://images.unsplash.com/photo-1541728472741-03e45a58cf88?w=500",
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500"
+    ],
+    "category": "Electronics",
+    "subcategory": "Computer Accessories",
+    "features": ["6 LED Fans", "Ultra Quiet", "Height Adjustable", "USB Powered"],
+    "ratings": 4.5,
+    "reviews": 876,
+    "inStock": true,
+    "trending": false,
+    "supplier": "AliExpress",
+    "supplierPrice": 8.00,
+    "shippingTime": "7-14 days",
+    "tags": ["laptop", "cooling", "led", "stand"]
+  }
+]
