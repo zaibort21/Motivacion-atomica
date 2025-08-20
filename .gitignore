@@ -8,6 +8,8 @@ yarn-error.log*
 dist/
 build/
 .cache/
+.next/
+out/
 
 # Environment variables
 .env
@@ -38,3 +40,8 @@ logs
 # Temporary files
 tmp/
 temp/
+temp_*.json
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
